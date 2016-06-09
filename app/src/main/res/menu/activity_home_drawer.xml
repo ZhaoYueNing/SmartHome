@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_addNewDevice"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="添加一台新设备"/>
+        <!--<item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery"/>
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Slideshow"/>
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools"/>-->
+    </group>
+
+    <item android:title="设备管理">
+        <menu>
+            <item
+                android:id="@+id/nav_deviceList"
+                android:icon="@android:drawable/btn_star_big_off"
+                android:title="设备列表"/>
+            <item
+                android:id="@+id/nav_currentDevice"
+                android:icon="@android:drawable/btn_star_big_off"
+                android:title="当前设备"/>
+        </menu>
+    </item>
+
+</menu>

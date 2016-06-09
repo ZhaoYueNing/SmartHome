@@ -2,14 +2,12 @@ package com.buynow.smarthome.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
@@ -26,7 +24,6 @@ import android.widget.Toast;
 
 
 import com.buynow.smarthome.R;
-import com.buynow.smarthome.activity.HomeActivity;
 import com.buynow.smarthome.utils.MyConstants;
 import com.buynow.smarthome.utils.SPUtils;
 import com.buynow.smarthome.utils.StreamToools;
@@ -41,8 +38,6 @@ import java.io.InputStream;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class SplashActivity extends Activity {
     //tag
