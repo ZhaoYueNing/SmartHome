@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:layout_width="wrap_content"
+android:layout_height="70dp"
+android:background="@drawable/bg"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<ImageView
+    android:id="@+id/iv_loge"
+    android:layout_width="90dp"
+    android:layout_height="70dp"
+    android:src="@drawable/power"/>
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tv_derviceName"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:layout_centerVertical="true"
+        android:textSize="30sp"
+        android:shadowRadius="1"
+        android:text="Name"/>
+
+
+</RelativeLayout>
+<ImageView
+    android:id="@+id/iv_remove"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:src="@android:drawable/ic_menu_delete"/>
+
+
+</LinearLayout>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:background="@drawable/bg2"
               android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +36,28 @@
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:text="    3.为模块设置备注，便于区分\n      (如：客厅)"/>
+        <EditText
+            android:id="@+id/et_wifiName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:hint="请输入模块需要连入的WIFI名"
+            android:textColorHint="#55ffffff"/>
+
+        <EditText
+            android:id="@+id/et_wifiPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:hint="请输入模块需要连入的WIFI密码"
+            android:textColorHint="#55ffffff"/>
+        <com.dd.CircularProgressButton
+            android:id="@+id/bt_initDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="初始化"/>
 
 
     </LinearLayout>

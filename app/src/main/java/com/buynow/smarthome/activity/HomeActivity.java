@@ -1,10 +1,7 @@
 package com.buynow.smarthome.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,9 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.buynow.smarthome.R;
+import com.buynow.smarthome.fragment.AddNewDeviceFragment;
+import com.buynow.smarthome.fragment.DeviceListFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -93,12 +91,15 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
         //// TODO: 设置菜单监听 
         if (id == R.id.nav_addNewDevice) {
-            Toast.makeText(HomeActivity.this, "你好", Toast.LENGTH_SHORT).show();
-            // Handle the camera action
+            //进入添加设备界面
+            mFm.beginTransaction().replace(R.id.fl_home, new AddNewDeviceFragment()).commit();
+
         } else if (id == R.id.nav_deviceList) {
+            //进入设备列表
+            mFm.beginTransaction().replace(R.id.fl_home, new DeviceListFragment()).commit();
 
         } else if (id == R.id.nav_currentDevice) {
-
+            //当前设备
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

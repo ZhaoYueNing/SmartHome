@@ -6,6 +6,14 @@
             android:id="@+id/nav_addNewDevice"
             android:icon="@android:drawable/ic_menu_add"
             android:title="添加一台新设备"/>
+        <item
+            android:id="@+id/nav_deviceList"
+            android:icon="@android:drawable/btn_star_big_off"
+            android:title="设备列表"/>
+        <item
+            android:id="@+id/nav_currentDevice"
+            android:icon="@android:drawable/btn_star_big_off"
+            android:title="当前设备"/>
         <!--<item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -22,14 +30,7 @@
 
     <item android:title="设备管理">
         <menu>
-            <item
-                android:id="@+id/nav_deviceList"
-                android:icon="@android:drawable/btn_star_big_off"
-                android:title="设备列表"/>
-            <item
-                android:id="@+id/nav_currentDevice"
-                android:icon="@android:drawable/btn_star_big_off"
-                android:title="当前设备"/>
+
         </menu>
     </item>
 
