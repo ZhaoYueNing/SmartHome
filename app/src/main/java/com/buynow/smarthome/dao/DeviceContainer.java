@@ -21,6 +21,7 @@ public class DeviceContainer {
 
 
     private static void initData() {
+        //TODO 虚拟数据
         Device device = new Device();
         device.setId(UUID.randomUUID().toString());
         device.setName("客厅");
