@@ -41,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
+            android:text="12345"
             android:hint="请输入模块需要连入的WIFI名"
             android:textColorHint="#55ffffff"/>
 
@@ -48,9 +49,20 @@
             android:id="@+id/et_wifiPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="12345"
             android:textColor="#ffffff"
             android:hint="请输入模块需要连入的WIFI密码"
-            android:textColorHint="#55ffffff"/>
+            android:textColorHint="#99ffffff"/>
+
+        <EditText
+            android:id="@+id/et_sn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="12345"
+            android:hint="请输入设备SN码"
+            android:textColorHint="#99ffffff"/>
+
         <com.dd.CircularProgressButton
             android:id="@+id/bt_initDevice"
             android:layout_width="match_parent"

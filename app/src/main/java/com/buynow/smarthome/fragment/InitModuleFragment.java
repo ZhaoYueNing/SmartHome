@@ -1,55 +1,64 @@
 package com.buynow.smarthome.fragment;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.buynow.smarthome.R;
-import com.buynow.smarthome.domain.Device;
+import com.buynow.smarthome.utils.TCPRunnable;
 import com.dd.CircularProgressButton;
 
-import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Created by buynow on 16-6-9.
+ * 初始化模块
  */
-public class AddNewDeviceFragment  extends Fragment{
-    //模块ip地址
-    private final String DERVICE_IP = "192.168.4.1";
+public class InitModuleFragment extends Fragment{
+    private static String TAG = "TAG_InitModuleFragment";
+    //TODO 模块ip地址
+    private final String MODULE_IP ="169.254.131.175";// "192.168.4.1";
     //模块端口号
-    private final int DERVICE_PORT = 8080;
+    private final int MODULE_PORT = 8098;
 
     private CircularProgressButton bt_initDevice;
     private EditText et_wifiName;
     private EditText et_wifiPassword;
+    private EditText et_SN;
     private View mView;
-/*    private Handler mHandler = new Handler(){
+    private Socket mSocket;
+    private Executor mExecutor;
+    /*    private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
         }
     };*/
 
-    public AddNewDeviceFragment() {
+    public InitModuleFragment() {
 
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragm_add_new_device, null);
+        mView = inflater.inflate(R.layout.fragm_init_module, null);
 
         //初始化数据
         //初始化各组件
@@ -80,36 +89,19 @@ public class AddNewDeviceFragment  extends Fragment{
      */
     private void initDevice() {
         //TODO init dervice
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //通过tcp连接模块
-                try {
-                    String wifiName = et_wifiName.getText().toString();
-                    String wifiPassword = et_wifiPassword.getText().toString();
-
-                    Socket socket= new Socket(DERVICE_IP,DERVICE_PORT);
-                    PrintWriter out = new PrintWriter(
-                            new BufferedWriter(new OutputStreamWriter(
-                                    socket.getOutputStream())), true);
-
-                    //为设备设置id
-
-                    //传输给设备需要连入的wifi名及其密码
-
-                    //添加设备到设备列表
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        //获取 wifi名 wifi密码 模块sn码
+        String wifiName = et_wifiName.getText().toString();
+        String wifiPassword = et_wifiPassword.getText().toString();
+        String moduleSN = et_SN.getText().toString();
+        mExecutor.execute(new TCPRunnable(wifiName,wifiPassword,moduleSN,MODULE_IP,MODULE_PORT));
 
     }
 
     private void initData() {
+        mExecutor = Executors.newCachedThreadPool();
         et_wifiName = (EditText) mView.findViewById(R.id.et_wifiName);
         et_wifiPassword = (EditText) mView.findViewById(R.id.et_wifiPassword);
+        et_SN = (EditText)mView.findViewById(R.id.et_sn);
         bt_initDevice = (CircularProgressButton) mView.findViewById(R.id.bt_initDevice);
     }
 }

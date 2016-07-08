@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.buynow.smarthome.R;
-import com.buynow.smarthome.fragment.AddNewDeviceFragment;
+import com.buynow.smarthome.fragment.InitModuleFragment;
 import com.buynow.smarthome.fragment.DeviceListFragment;
 
 public class HomeActivity extends AppCompatActivity
@@ -90,9 +90,9 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         //// TODO: 设置菜单监听 
-        if (id == R.id.nav_addNewDevice) {
+        if (id == R.id.nav_InitModule) {
             //进入添加设备界面
-            mFm.beginTransaction().replace(R.id.fl_home, new AddNewDeviceFragment()).commit();
+            mFm.beginTransaction().replace(R.id.fl_home, new InitModuleFragment()).commit();
 
         } else if (id == R.id.nav_deviceList) {
             //进入设备列表

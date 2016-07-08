@@ -3,9 +3,14 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_InitModule"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="初始化模块"/>
+        <item
             android:id="@+id/nav_addNewDevice"
             android:icon="@android:drawable/ic_menu_add"
-            android:title="添加一台新设备"/>
+            android:title="添加新设备"
+            />
         <item
             android:id="@+id/nav_deviceList"
             android:icon="@android:drawable/btn_star_big_off"
