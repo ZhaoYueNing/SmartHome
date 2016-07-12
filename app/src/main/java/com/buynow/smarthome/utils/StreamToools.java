@@ -19,6 +19,9 @@ public class StreamToools {
 	 * @return 字符串
 	 */
 	public static String getString(InputStream in){
+		if (in == null) {
+			return null;
+		}
 		InputStreamReader isr = new InputStreamReader(in);
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		byte[] array = new byte[1024];

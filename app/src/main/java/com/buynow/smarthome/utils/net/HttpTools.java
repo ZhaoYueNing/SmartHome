@@ -59,15 +59,6 @@ public class HttpTools {
 		return null;
 	}
 	
-	//demo
-	public static void main(String[] args) {
-		try {
-			downloadFile("http://119.29.241.112:8080/buynow/myAppData/FanSafe/app.apk", "."+File.separatorChar+"cache"+File.separatorChar,"new.apk", 5000);
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 	
 }
