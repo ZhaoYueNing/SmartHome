@@ -49,8 +49,8 @@ public class TCPRunnable implements Runnable {
             InputStream in = mSocket.getInputStream();
             //从模块读取的初始化反馈信息 OK OR FAIL
             //TODO wifi名 wifi密码 sn码传递格式
-            out.print("WIFI_SET=WIFI_NAME="+wifiName+"&WIFI_PASSWORD="+wifiPassword+"&SN=\n");
-            out.print(moduleSN);
+            out.print("wifi_set=AT+CWJAP=\""+wifiName+"\",\""+wifiPassword+"\"&");
+//            out.print(moduleSN);
             out.flush();
             byte[] buffer = new  byte[1024];
             int len;

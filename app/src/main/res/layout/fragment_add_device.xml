@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textColor="#ffffff"
+            android:text="添加设备"/>
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/bt_addDevice_airConditioning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="空调"/>
+
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="有限电视机顶盒"/>
+
+
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="电视"/>
+
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="热水器"/>
+
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="智能盒子"/>
+
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:cpb_textIdle="投影仪"/>
+
+    </LinearLayout>
+
+</LinearLayout>

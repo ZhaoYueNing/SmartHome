@@ -33,9 +33,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class InitModuleFragment extends Fragment{
     private static String TAG = "TAG_InitModuleFragment";
     //TODO 模块ip地址
-    private final String MODULE_IP ="169.254.131.175";// "192.168.4.1";
+    private final String MODULE_IP ="192.168.4.1";// "192.168.1.105";
     //模块端口号
-    private final int MODULE_PORT = 8098;
+    private final int MODULE_PORT = 8080;
 
     private CircularProgressButton bt_initDevice;
     private EditText et_wifiName;

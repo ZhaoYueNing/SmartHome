@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+        <com.dd.CircularProgressButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cpb_textIdle="添加学习记录"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:id="@+id/cpb_addStudyMod" />
+            <ListView
+                android:id="@+id/lv_studymod"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

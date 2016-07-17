@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 空调控制界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:textSize="130dp"
+            android:text="21"
+            android:id="@+id/tv_wendu" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="130dp"
+            android:text="℃"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_power"
+            android:background="@drawable/button_bg"
+            android:id="@+id/ib_power"
+            android:layout_alignTop="@+id/ib_fengli"
+            android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00ffffff"
+            android:src="@drawable/icon_high"
+            android:id="@+id/ib_fengli"
+            android:layout_alignTop="@+id/linearLayout"
+            android:layout_alignParentEnd="true" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="104dp">
+            <com.dd.CircularProgressButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                app:cpb_textIdle="+"
+                android:textColor="#ffffff"
+                android:id="@+id/ib_wendu_add" />
+            <com.dd.CircularProgressButton
+                app:cpb_textIdle="-"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:id="@+id/ib_wendu_lessen" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/linearLayout2">
+            <ImageButton
+                android:id="@+id/ib_model_cool"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_model_cool"
+                android:background="@drawable/bg_white"
+                 />
+
+            <ImageButton
+                android:id="@+id/ib_model_hot"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_model_hot"
+                android:background="@drawable/bg_white"
+                />
+
+            <ImageButton
+                android:id="@+id/ib_model_water"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_model_water"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_white"
+                />
+
+
+            <ImageButton
+                android:id="@+id/ib_model_wind"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_model_wind"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_white"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

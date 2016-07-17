@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Created by buynow on 16-6-9.
+ * 设备类
  */
 public class Device {
     //模块类型
