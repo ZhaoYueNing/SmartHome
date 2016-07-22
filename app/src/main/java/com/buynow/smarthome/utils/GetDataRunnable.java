@@ -25,8 +25,8 @@ public class GetDataRunnable implements Runnable {
     @Override
     public void run() {
         byte[] buf = new byte[1024];
-        try {
-            DatagramSocket socket = new DatagramSocket(8001);
+
+            DatagramSocket socket = GetMyDatagramSocket.getSocket();
             DatagramPacket packet = new DatagramPacket(buf, buf.length);
             Log.d("GETDATARUNNABLE_TAG", "run");
             while(true){
@@ -46,14 +46,17 @@ public class GetDataRunnable implements Runnable {
 
                         msg.what= HomeActivity.UPDATE_WENSHIDU;
                         handler.sendMessage(msg);
+                    }else if (data.contains("ruqin&")){
+                        //检测到入侵
+                        Message msg = Message.obtain();
+                        msg.what= HomeActivity.RUQIN_Y;
+                        handler.sendMessage(msg);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
 
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
+
     }
 }

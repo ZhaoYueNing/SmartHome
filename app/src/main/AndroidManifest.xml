@@ -32,7 +32,7 @@
         </activity>
         <activity
             android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="SmartHome"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

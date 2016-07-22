@@ -70,6 +70,33 @@
             android:textSize="80sp"
             android:text="  %"/>
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="光强："/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guangzhao"/>
+        <TextView
+            android:id="@+id/tv_guangqiang"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="match_parent"
+            android:textSize="100sp"
+            android:text="535"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="80sp"
+            android:text=" Lx"/>
+    </LinearLayout>
     <com.dd.CircularProgressButton
         android:id="@+id/cpb_refresh"
         android:layout_width="match_parent"

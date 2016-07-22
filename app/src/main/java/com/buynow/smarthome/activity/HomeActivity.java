@@ -22,14 +22,18 @@ import com.buynow.smarthome.fragment.ControlAirFragment;
 import com.buynow.smarthome.fragment.GetDataFragment;
 import com.buynow.smarthome.fragment.InitModuleFragment;
 import com.buynow.smarthome.fragment.DeviceListFragment;
+import com.buynow.smarthome.fragment.SafeManagerFragment;
 import com.buynow.smarthome.fragment.StudyModFragment;
 import com.buynow.smarthome.utils.GetDataRunnable;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static final int UPDATE_WENSHIDU = 0;
+    public static final int RUQIN_Y = 1;
     //温湿度数据 0温度 1湿度
     private int[] wenshidu = new int[]{20,20};
+    //是否有入侵
+    private static boolean isRuqin = false;
     public static int cuurentDevice=27;
 
     private FragmentManager mFm;
@@ -42,6 +46,10 @@ public class HomeActivity extends AppCompatActivity
                     wenshidu[0]=msg.arg1;
                     wenshidu[1]=msg.arg2;
                     break;
+                //发现入侵
+                case RUQIN_Y:
+                    isRuqin=true;
+
             }
         }
     };
@@ -66,6 +74,9 @@ public class HomeActivity extends AppCompatActivity
         
         //创建线程监听 模块发送的温湿度数据
         new Thread(new GetDataRunnable(handler)).start();
+
+        //当前设备
+        mFm.beginTransaction().replace(R.id.fl_home,new ControlAirFragment()).commit();
     }
 
     private void initData() {
@@ -109,7 +120,7 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        //// TODO: 设置菜单监听 
+        //TODO: 设置菜单监听
         if (id == R.id.nav_InitModule) {
             //进入初始化模块界面
             mFm.beginTransaction().replace(R.id.fl_home, new InitModuleFragment()).commit();
@@ -128,10 +139,21 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_data) {
             //室内环境
             mFm.beginTransaction().replace(R.id.fl_home,new GetDataFragment(wenshidu)).commit();
+        } else if (id == R.id.nav_safe_manager) {
+            //安全管家
+            mFm.beginTransaction().replace(R.id.fl_home,new SafeManagerFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public static void setIsRuqin(boolean ruqin) {
+        isRuqin=ruqin;
+    }
+
+    public static boolean getRuqin() {
+        return isRuqin;
     }
 }

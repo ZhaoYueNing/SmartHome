@@ -18,4 +18,7 @@ public class CmdSender {
         }
         return str.substring(0,2);
     }
+    public static void sendCustomCmd(String cmd){
+        new Thread(new UDPRunnable("255.255.255.255",8002,cmd)).start();
+    }
 }
